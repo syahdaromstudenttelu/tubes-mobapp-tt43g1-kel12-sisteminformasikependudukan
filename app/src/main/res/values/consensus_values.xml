@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country_name_value_default">Country</string>
+    <string name="capital_name_value_default">Capital</string>
+    <string name="total_pop_value_default">0</string>
+    <string name="pop_growth_value_default">0%</string>
+    <string name="urban_pop_value_default">0</string>
+    <string name="urban_pop_growth_value_default">0%</string>
+    <string name="unemployment_value_default">0%</string>
+    <string name="country_name_value">%0$s</string>
+    <string name="capital_name_value">%0$s</string>
+    <string name="total_pop_value">%0$s</string>
+    <string name="pop_growth_value">%1$s%2$s</string>
+    <string name="urban_pop_value">%1$s</string>
+    <string name="urban_pop_growth_value">%1$s%2$s</string>
+    <string name="unemployment_value">%1$s%2$s</string>
+</resources>

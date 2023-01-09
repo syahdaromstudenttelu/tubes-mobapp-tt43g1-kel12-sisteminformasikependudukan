@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Sistem Informasi Kependudukan</string>
+    <string name="country_text_input_hint">Masukan nama negara</string>
+    <string name="country_button_text">Cari Data</string>
+    <string name="country_name_title">Negara</string>
+    <string name="capital_name_title">Ibu Kota</string>
+    <string name="total_pop_title">Total Populasi</string>
+    <string name="pop_growth_title">Pertumbuhan Populasi</string>
+    <string name="urban_pop_title">Populasi Urban</string>
+    <string name="urban_pop_growth_title">Pertumbuhan Populasi Urban</string>
+    <string name="unemployment_title">Tingkat Pengangguran</string>
 </resources>
