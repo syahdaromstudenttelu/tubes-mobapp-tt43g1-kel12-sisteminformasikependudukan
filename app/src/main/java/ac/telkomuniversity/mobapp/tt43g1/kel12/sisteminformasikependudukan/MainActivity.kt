@@ -24,6 +24,7 @@ import java.util.concurrent.Executors
 class MainActivity : AppCompatActivity() {
     private lateinit var countryTextInput: TextInputEditText
     private lateinit var countryButton: Button
+    private lateinit var consensusEmptyTextView: TextView
     private lateinit var countryConsensusWrapper: LinearLayoutCompat
     private lateinit var countryFlagImageView: ImageView
     private lateinit var countryValueTextView: TextView
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private fun initComponentViews() {
         this.countryTextInput = findViewById(R.id.countryTextInput)
         this.countryButton = findViewById(R.id.countryButton)
+        this.consensusEmptyTextView = findViewById(R.id.consensusEmptyTextView)
         this.countryConsensusWrapper = findViewById(R.id.countryConsensusWrapper)
         this.countryFlagImageView = findViewById(R.id.countryFlagImageView)
         this.countryValueTextView = findViewById(R.id.countryValueTextView)
@@ -74,49 +76,57 @@ class MainActivity : AppCompatActivity() {
                 }
                 val resultData = result.await().body()
                 if (resultData != null) {
-                    val consensusData = resultData[0]
-                    countryValueTextView.text = consensusData.name.toString()
-                    capitalValueTextView.text = consensusData.capital.toString()
-                    populationValueTextView.text = consensusData.population.toString()
-                    popGrowthValueTextView.text =
-                        getString(
-                            R.string.pop_growth_value,
-                            consensusData.pop_growth.toString(),
-                            "%"
-                        )
+                    val resultDataIsEmpty = resultData.isEmpty()
 
-                    urbanPopValueTextView.text =
-                        consensusData.urban_population.toString()
+                    if(resultDataIsEmpty) {
+                        countryConsensusWrapper.visibility = View.INVISIBLE
+                        consensusEmptyTextView.visibility = View.VISIBLE
+                    } else {
+                        val consensusData = resultData[0]
+                        countryValueTextView.text = consensusData.name.toString()
+                        capitalValueTextView.text = consensusData.capital.toString()
+                        populationValueTextView.text = consensusData.population.toString()
+                        popGrowthValueTextView.text =
+                            getString(
+                                R.string.pop_growth_value,
+                                consensusData.pop_growth.toString(),
+                                "%"
+                            )
 
-                    urbanGrowthValueTextView.text =
-                        getString(
-                            R.string.urban_pop_growth_value,
-                            consensusData.urban_population_growth.toString(),
-                            "%"
-                        )
+                        urbanPopValueTextView.text =
+                            consensusData.urban_population.toString()
 
-                    unemploymentValueTextView.text =
-                        getString(
-                            R.string.unemployment_value,
-                            consensusData.unemployment.toString(),
-                            "%"
-                        )
+                        urbanGrowthValueTextView.text =
+                            getString(
+                                R.string.urban_pop_growth_value,
+                                consensusData.urban_population_growth.toString(),
+                                "%"
+                            )
 
-                    val executor = Executors.newSingleThreadExecutor()
-                    val handler = Handler(Looper.getMainLooper())
-                    var image: Bitmap? = null
-                    executor.execute {
-                        val imageURL = "https://countryflagsapi.com/png/${consensusData.iso2}"
-                        try {
-                            val `in` = java.net.URL(imageURL).openStream()
-                            image = BitmapFactory.decodeStream(`in`)
-                            handler.post {
-                                countryFlagImageView.setImageBitmap(image)
+                        unemploymentValueTextView.text =
+                            getString(
+                                R.string.unemployment_value,
+                                consensusData.unemployment.toString(),
+                                "%"
+                            )
+
+                        val executor = Executors.newSingleThreadExecutor()
+                        val handler = Handler(Looper.getMainLooper())
+                        var image: Bitmap? = null
+                        executor.execute {
+                            val imageURL = "https://countryflagsapi.com/png/${consensusData.iso2}"
+                            try {
+                                val `in` = java.net.URL(imageURL).openStream()
+                                image = BitmapFactory.decodeStream(`in`)
+                                handler.post {
+                                    countryFlagImageView.setImageBitmap(image)
+                                }
+                                consensusEmptyTextView.visibility = View.INVISIBLE
+                                countryConsensusWrapper.visibility = View.VISIBLE
                             }
-                            countryConsensusWrapper.visibility = View.VISIBLE
-                        }
-                        catch (e: Exception) {
-                            e.printStackTrace()
+                            catch (e: Exception) {
+                                e.printStackTrace()
+                            }
                         }
                     }
                 }
