@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="match_parent"
     android:layout_width="match_parent"
-    android:background="@color/slate_200">
+    style="@style/BackgroundScreen">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -38,113 +38,99 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/country_name_title"/>
+                android:text="@string/country_name_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/countryValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/country_name_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/capital_name_title"/>
+                android:text="@string/capital_name_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/capitalValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/capital_name_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/total_pop_title"/>
+                android:text="@string/total_pop_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/populationValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/total_pop_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/pop_growth_title"/>
+                android:text="@string/pop_growth_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/popGrowthValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/pop_growth_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/urban_pop_title"/>
+                android:text="@string/urban_pop_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/urbanPopValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/urban_pop_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/urban_pop_growth_title"/>
+                android:text="@string/urban_pop_growth_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/urbanGrowthValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
                 android:text="@string/urban_pop_growth_value_default"
-                android:layout_marginBottom="12dp"/>
+                android:layout_marginBottom="12dp"
+                style="@style/CustomTextBody1"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/raleway_bold"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Headline5"
-                android:text="@string/unemployment_title"/>
+                android:text="@string/unemployment_title"
+                style="@style/CustomTextHeadline5"/>
 
             <TextView
                 android:id="@+id/unemploymentValueTextView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/inter_regular"
-                android:textAppearance="@style/TextAppearance.MaterialComponents.Body1"
-                android:text="@string/unemployment_value_default"/>
+                android:text="@string/unemployment_value_default"
+                style="@style/CustomTextBody1"/>
 
         </androidx.appcompat.widget.LinearLayoutCompat>
 
