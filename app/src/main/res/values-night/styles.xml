@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="BackgroundScreen">
+        <item name="android:background">@color/slate_900</item>
+    </style>
+
+    <style name="CustomTextHeadline5">
+        <item name="android:fontFamily">@font/raleway_bold</item>
+        <item name="android:textAppearance">?attr/textAppearanceHeadline5</item>
+        <item name="android:textColor">@color/slate_200</item>
+    </style>
+
+    <style name="CustomTextBody1">
+        <item name="android:fontFamily">@font/inter_regular</item>
+        <item name="android:textAppearance">?attr/textAppearanceBody1</item>
+        <item name="android:textColor">@color/slate_200</item>
+    </style>
+</resources>
