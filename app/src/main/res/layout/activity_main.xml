@@ -15,6 +15,18 @@
 
         <include layout="@layout/country_input_form" />
 
+        <TextView
+            android:id="@+id/consensusEmptyTextView"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/consensus_data_empty"
+            android:visibility="invisible"
+            style="@style/CustomTextBody1" />
+
         <androidx.appcompat.widget.LinearLayoutCompat
             android:id="@+id/countryConsensusWrapper"
             app:layout_constraintTop_toBottomOf="@+id/countryInputForm"
